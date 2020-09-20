@@ -36,6 +36,12 @@ public class ExplicitWaitTest1 extends TestBase {
         WebElement message2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
         String message2Text = message2.getText();
         Assert.assertEquals(message2Text, "It's disabled!");
+        WebElement textBox1 = driver.findElement(By.xpath("//input[@type='text']"));
+        Assert.assertTrue(!textBox1.isEnabled());
+
+
+
+
 
     }
 
