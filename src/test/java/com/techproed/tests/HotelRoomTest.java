@@ -50,8 +50,6 @@ public class HotelRoomTest extends TestBase {
             driver.findElement(By.id("btnSubmit")).click();
 
 
-
-
             WebDriverWait wait = new WebDriverWait(driver,10);
             WebElement successMessage =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='bootbox-body']")));
 
@@ -63,6 +61,40 @@ public class HotelRoomTest extends TestBase {
             okButton.click();
 
 
-
         }
+
+             @Test
+             public void verifyHotel() throws InterruptedException {
+                 clickOnLogin();
+                 driver.findElement(By.id("menuHotels")).click();
+                 driver.findElement(By.partialLinkText("Hotel Rooms")).click();
+                 Thread.sleep(1000);
+                 driver.findElement(By.xpath("//td/input")).sendKeys("32");
+                 driver.findElement(By.xpath("//td[3]/input")).sendKeys("1234");
+                 Thread.sleep(1000);
+                 driver.findElement(By.xpath("//td[9]/div/button")).click();
+                 Thread.sleep(2000);
+                 String actualText = driver.findElement(By.xpath("//div[3]/div[1]/div[3]")).getText();
+                 Assert.assertTrue(actualText.contains("Found"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
 }
