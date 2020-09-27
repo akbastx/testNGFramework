@@ -27,6 +27,12 @@ public class WebTables extends TestBase {
         driver.findElement(By.partialLinkText("Hotel Rooms")).click();
     }
 
+    public void printData(int row, int column){
+        String xPath= "//tbody//tr["+row+"]//td["+column+"]";
+        WebElement data = driver.findElement(By.xpath(xPath));
+        System.out.println(data.getText());
+    }
+
 
 
 
@@ -95,53 +101,41 @@ public class WebTables extends TestBase {
 //    }
 
 
+//    @Test
+//    public void webTableHomework() throws InterruptedException {
+//
+//        login();
+//        Thread.sleep(5000);
+//
+//        //  test if the 6th column includes price of 1000,
+//        WebElement sixtColumn = driver.findElement(By.xpath("//tbody")); //it should be //td[6]
+//        String text = sixtColumn.getText();
+//        Assert.assertTrue(text.contains("1,000.00"));
+//
+//        //  test if the first table row has Orlando,
+//        WebElement firstRow = driver.findElement(By.xpath("//tbody//tr[1]"));
+//        String text1 = firstRow.getText();
+//        Assert.assertTrue(text1.contains("Orlando"));
+//
+//        //  test if fourth column has hilton
+//        WebElement fourthColumn = driver.findElement(By.xpath("//tbody"));  //it should be //td[4]
+//        String text2 = fourthColumn.getText();
+//        Assert.assertTrue(text2.contains("Hilton"));
+//    }
+
     @Test
     public void webTableHomework() throws InterruptedException {
 
         login();
-        Thread.sleep(5000);
-
-
-        //  test if the 6th column includes price of 1000,
-        WebElement sixtColumn = driver.findElement(By.xpath("//tbody")); //it should be //td[6]
-        String text = sixtColumn.getText();
-        Assert.assertTrue(text.contains("1,000.00"));
-
-        //  test if the first table row has Orlando,
-        WebElement firstRow = driver.findElement(By.xpath("//tbody//tr[1]"));
-        String text1 = firstRow.getText();
-        Assert.assertTrue(text1.contains("Orlando"));
-
-        //  test if fourth column has hilton
-        WebElement fourthColumn = driver.findElement(By.xpath("//tbody"));  //it should be //td[4]
-        String text2 = fourthColumn.getText();
-        Assert.assertTrue(text2.contains("Hilton"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Thread.sleep(2000);
+        printData(2, 3);
     }
+
+
+
+
+
+
 
 
 
