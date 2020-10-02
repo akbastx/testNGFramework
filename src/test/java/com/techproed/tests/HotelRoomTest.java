@@ -30,6 +30,8 @@ public class HotelRoomTest extends TestBase {
             driver.findElement(By.partialLinkText("ADD HOTELROOM")).click();
             Thread.sleep(1000);
 
+
+
             WebElement dropDownElement = driver.findElement(By.id("IDHotel"));
             Select options = new Select(dropDownElement);
             options.selectByValue("4");
