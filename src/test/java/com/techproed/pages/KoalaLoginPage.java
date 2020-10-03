@@ -23,7 +23,4 @@ public class KoalaLoginPage {
     @FindBy(id = "btnSubmit")
     public WebElement koalaLoginButton;
 
-
-
-
 }
