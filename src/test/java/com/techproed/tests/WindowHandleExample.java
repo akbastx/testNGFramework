@@ -35,7 +35,7 @@ public class WindowHandleExample extends TestBase {
         //THE NEW WINDOW OPENS IN A NEW TAB. THIS MEANS WE HAVE TO SWITCH TO THE NEW WINDOW!!!!
         ///WE WILL GET ALL OPEN WINDOW HANDLES AND PUT THEM IN A SET.
         Set<String> allWindows=driver.getWindowHandles();
-        //Using for each loop, we can switch to teh new window.
+
         for (String eachWindow:allWindows){
             if (!eachWindow.equals(window1)){
                 driver.switchTo().window(eachWindow);
@@ -45,6 +45,10 @@ public class WindowHandleExample extends TestBase {
         String actualNewPageTitle=driver.getTitle();
         String expectedNewPageTitle="New Window";
         Assert.assertEquals(actualNewPageTitle,expectedNewPageTitle,"New Page Title is not equal");
+
+
+//        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+//        driver.switchTo().window(tabs2.get(1));
 
     }
 }
